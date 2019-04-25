@@ -1,0 +1,9 @@
+<div id="languages" class="page-container container" ui-scroll-viewport>
+  <h1>{{::g.t('Languages')}}</h1>
+  <section class="genres-list link hairline-border-bottom" ui-scroll="item in provider" padding="0" ng-click="navigate.showLangBooks(item)">
+    <p>
+      <strong>{{item.title}}</strong>
+    </p>
+    <span>{{item.quantity}}</span>
+  </section>
+</div>

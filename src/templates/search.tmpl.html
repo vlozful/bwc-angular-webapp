@@ -1,0 +1,17 @@
+<div id="search" class="page-container container">
+  <section class="search">
+    <h1>{{::g.t('Search')}}</h1>
+    <h2>{{::g.t('#required_search_page_text')}}</h2>
+    <div class="search">
+      <input class="hairline-border" type="search" placeholder="{{::g.t('Search')}}" ng-model="searchString" ng-blur="searchString.length ? search(searchString) :''">
+      <button class="btn">{{::g.t('Search')}}</button>
+      </div>
+  </section>
+  <ng-include src="'booklist.tmpl.html'"></ng-include>
+  <section class="search-popular" ng-if="similar.length">
+    <h1>{{::g.t('Popular searches')}}</h1>
+    <div>
+      <a ng-click="search(request)" ng-repeat="request in similar">{{::request}}</a>
+    </div>
+  </section>
+</div>

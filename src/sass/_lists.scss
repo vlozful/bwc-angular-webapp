@@ -1,0 +1,29 @@
+ul.hlist, ul.vlist {
+  list-style-image: none;
+  position: relative;
+  margin:0px;
+  padding:0px;
+  li {
+    display: inline-block !important;
+    position: relative;
+  }
+}
+
+ul.vlist li {
+  display:block !important;
+}
+
+ul.taglist {
+  padding: 8px 0 0;
+  li {
+    padding: 0 9px 0 9px;
+    height: 35px;
+    line-height:35px;
+    vertical-align: middle;
+    font-weight: bold;
+    background: #e5e5e5;
+    border-radius: 4px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+  }
+}

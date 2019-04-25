@@ -1,0 +1,19 @@
+<div id="order-status" class="page-container container" ng-if="order.idOrder">
+  <section class="book-details hairline-border-bottom">
+    <h1><span>{{::g.t('Status of order')}}</span> №{{order.idOrder}}: {{order.paymentStatusText}}</h1><br><br>
+    <div class="book-field" ng-repeat="book in books">
+      <div class="book-cover"><img ng-src="{{book.thumb}}"></div>
+      <div class="book-info">
+        <h2>{{::book.title}}</h2>
+        <h3>{{::book.author}}</h3>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="button">
+      <button class="btn btn-blue round" ng-click="action(order.idOrderStatus)" ng-switch="order.idOrderStatus">
+        <span ng-switch-when="1">{{::g.t('Refresh')}}</span> <span ng-switch-when="2">{{::g.t('Go to Bookshelf')}}</span> <span ng-switch-default>{{::g.t('Pay again')}}</span>
+      </button>
+    </div>
+  </section>
+</div>

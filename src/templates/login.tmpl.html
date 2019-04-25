@@ -1,0 +1,22 @@
+<div id="pages-container" class="container">
+  <div id="start" class="page-container container">
+    <div class="logo-container">
+      <div class="logo"></div>
+    </div>
+    <form name="loginForm" novalidate method="post" ng-submit="login(credentials)">
+      <div class="form-field" ng-class="{'highlight': loginForm.email.$dirty && loginForm.email.$touched, 'has-success': loginForm.email.$valid, 'has-error': !loginForm.email.$valid}">
+        <input name="email" ng-model="credentials.email" class="hairline-border" type="email" placeholder="{{::g.t('Your Email')}}" required>
+      </div>
+      <div class="form-field" ng-class="{'highlight': loginForm.password.$dirty && loginForm.password.$touched, 'has-success': loginForm.password.$valid, 'has-error': !loginForm.password.$valid}">
+        <input name="password" ng-model="credentials.password" class="hairline-border" type="password" placeholder="{{::g.t('Password')}}" required>
+      </div>
+      <div class="form-field button-field">
+        <button class="btn btn-green w100" type="submit">{{::g.t('Sign in')}}</button>
+      </div>
+    </form>
+    <br>
+    <a class="text-centered wb100 white" ng-if="!status.offline" ng-click="navigate.forgot()">{{::g.t('Forgot your password?')}}</a>
+    <br>
+    <a class="text-centered wb100 white uppercase no-underline" ng-if="!status.offline" ng-click="navigate.registration()">{{::g.t('Sign up')}}</a>
+  </div>
+</div>

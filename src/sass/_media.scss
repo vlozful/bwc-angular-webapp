@@ -1,0 +1,85 @@
+@import "compass/css3/columns";
+
+@media only screen and (min-device-width: 768px) {
+
+  h1 {
+    font-size: 24px;
+  }
+
+  nav li {
+    margin-left: 24px;
+  }
+
+  /*
+  div.book-info {
+    margin-left:20px;
+  }
+  */
+
+  .page-container,
+  #start.page-container,
+  #register.page-container,
+  #restore-pwd.page-container {
+    padding-top: $page-padding-top-wide;
+    padding-left: $page-padding-side-wide;
+    padding-right: $page-padding-side-wide;
+  }
+
+  #bookshelf.page-container, #main-bookshelf.page-container {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  #app-menu {
+    min-width: 400px;
+    width: 400px;
+    left: -400px;
+    &.opened {
+      @include translateX(400px);
+      & + #pages-container {
+        @include translateX(400px);
+      }
+    }
+  }
+
+  section.chosen-books {
+    margin-bottom: 47px;
+    padding-right: 2.5%;
+    .book-cover {
+      width: 178px;
+      height: 260px;
+      width: 23vw;
+      height: 36vw;
+    }
+  }
+
+  section.bookshelf {
+    padding-right: 0;
+    & > div {
+      width: 100%;
+    }
+    .book-field {
+      width: 22%;
+      -webkit-flex-basis: 22%;
+      flex-basis: 22%;
+      margin-right: 2.5%;
+      }
+    }
+
+  #book-reader {
+    .content-container {
+      width: 90%;
+      margin: 0 auto;
+      position: relative;
+    }
+  }
+
+}
+
+.cookie-container {
+  .text {
+    font-size: 20px;
+  }
+  button {
+    height: 50px;
+  }
+}

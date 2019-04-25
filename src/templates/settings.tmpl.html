@@ -1,0 +1,39 @@
+<div id="settings" class="page-container container">
+  <section class="login-register">
+    <h1>{{::g.t('Settings')}}</h1>
+    <h2>{{::g.t('#required_settings_text')}}</h2>
+    <p>{{::g.t('Change language')}}</p>
+    <form name="languageForm" novalidate method="post" ng-submit="changeLang()">
+      <div class="form-field no-mark">
+        <div class="select-field">
+          <div class="select-arrows"></div><select class="hairline-border" name="idLanguage" ng-model="idLanguage" required>
+            <option value="sv">Svenska</option>
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+            <option value="es">Español</option>
+            <option value="de">Deutsch</option>
+            <option value="ar">Arabic</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field button-field">
+        <button class="btn btn-green w100" type="submit">{{::g.t('Change')}}</button>
+      </div>
+    </form>
+    <p>{{::g.t('Change password')}}</p>
+    <form name="settingsForm" novalidate method="post" ng-submit="changePassword(model)">
+      <div class="form-field" ng-class="{'highlight': settingsForm.oldpassword.$dirty && settingsForm.oldpassword.$touched, 'has-success': settingsForm.oldpassword.$valid, 'has-error': !settingsForm.oldpassword.$valid}">
+        <input name="oldpassword" type="password" class="hairline-border" placeholder="{{::g.t('Old password')}}" required ng-model="model.oldpassword">
+      </div>
+      <div class="form-field" ng-class="{'highlight':settingsForm.password.$dirty && settingsForm.password.$touched, 'has-success': settingsForm.password.$valid, 'has-error': !settingsForm.password.$valid}">
+        <input name="password" type="password" class="hairline-border" placeholder="{{::g.t('New password')}}" required ng-model="model.password">
+      </div>
+      <div class="form-field" ng-class="{'highlight':settingsForm.password1.$dirty && settingsForm.password1.$touched, 'has-success': settingsForm.password1.$valid, 'has-error': !settingsForm.password1.$valid}">
+        <input name="password1" type="password" class="hairline-border" placeholder="{{::g.t('Repeat password')}}" ng-model="model.password1" compare-to="model.password" required>
+      </div>
+      <div class="form-field button-field">
+        <button class="btn btn-green w100" type="submit">{{::g.t('Change')}}</button>
+      </div>
+    </form>
+  </section>
+</div>

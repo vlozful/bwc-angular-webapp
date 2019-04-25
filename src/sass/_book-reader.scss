@@ -1,0 +1,36 @@
+#book-reader {
+  padding: 0;
+  .content-container {
+    width:100%;
+    height: 100%;
+  }
+
+  .info {
+    position: absolute;
+    text-align: center;
+    &.page {
+      bottom: 15px;
+      left:0;
+      right:0;
+      height:15px;
+      line-height:15px;
+      font-size: 10px;
+    }
+    &.back {
+      bottom: 15px;
+      left: 20px;
+      height: 15px;
+      line-height: 15px;
+      font-size: 10px;
+    }
+  }
+}
+
+#ebook {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  padding-top: 30px;
+}

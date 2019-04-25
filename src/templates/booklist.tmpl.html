@@ -1,0 +1,26 @@
+<section class="bookshelf">
+  <div class="book-field hairline-border-bottom" ui-scroll="item in provider" buffer-size="11" adapter="booksAdapter" padding="0" ng-click="(addToShelf && item.available()) ? addToShelf(item, this) : (!item.available()) ? navigate.showBook(item) : navigate.home($event)">
+    <div class="book-cover">
+      <div class="trialbuttons" ng-if="bookShelf && !item.available()">
+        <button class="btn btn-buy round red" ng-click="removeFromMyBooks(item, $event)">{{::g.t('Delete')}}</button>
+      </div>
+      <img ng-src="{{item.thumb}}">
+    </div>
+    <div class="book-info">
+      <h2>{{::item.title}}</h2>
+      <h3>{{::item.author}}</h3>
+      <h4 class="trial" ng-if="::bookShelf && item.isTrial()">{{::g.t('Trial book')}}</h4>
+    </div>
+    <div ng-if="::!bookShelf" class="shopbutton">
+      <div class="button" ng-if="!status.trial && !item.available()">
+        <button class="btn btn-buy round" ng-class="{green: !item.inCart}" ng-click="addToCart(item, $event)">{{::item.price}} {{::item.currency}}</button>
+      </div>
+      <div class="button" ng-if="status.trial && !item.isMyBook">
+        <button class="btn btn-buy round green" ng-click="addToMyBooks(item, $event, this)">{{::g.t('Free trial')}}</button>
+      </div>
+      <div class="button" ng-if="status.trial && item.isMyBook || item.available()">
+        <button class="btn btn-buy round green" ng-click="navigate.home($event)">{{::g.t('Read')}}</button>
+      </div>
+    </div>
+  </div>
+</section>

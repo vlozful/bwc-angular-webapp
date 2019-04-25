@@ -1,0 +1,374 @@
+{
+  "result": true,
+  "data": [
+    {
+      "codeShort": "AE",
+      "idCountry": "ARE",
+      "name": "United Arab Emirates",
+      "nameEN": "United Arab Emirates (the)"
+    },
+    {
+      "codeShort": "BE",
+      "idCountry": "BEL",
+      "name": "Belgium",
+      "nameEN": "Belgium"
+    },
+    {
+      "codeShort": "BH",
+      "idCountry": "BHR",
+      "name": "Bahrain",
+      "nameEN": "Bahrain"
+    },
+    {
+      "codeShort": "DE",
+      "idCountry": "DEU",
+      "name": "Germany",
+      "nameEN": "Germany"
+    },
+    {
+      "codeShort": "DK",
+      "idCountry": "DNK",
+      "name": "Denmark",
+      "nameEN": "Denmark"
+    },
+    {
+      "codeShort": "DZ",
+      "idCountry": "DZA",
+      "name": "Algeria",
+      "nameEN": "Algeria"
+    },
+    {
+      "codeShort": "EG",
+      "idCountry": "EGY",
+      "name": "Egypt",
+      "nameEN": "Egypt"
+    },
+    {
+      "codeShort": "ES",
+      "idCountry": "ESP",
+      "name": "Spain",
+      "nameEN": "Spain"
+    },
+    {
+      "codeShort": "FR",
+      "idCountry": "FRA",
+      "name": "France",
+      "nameEN": "France"
+    },
+    {
+      "codeShort": "GB",
+      "idCountry": "GBR",
+      "name": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "nameEN": "United Kingdom of Great Britain and Northern Ireland (the)"
+    },
+    {
+      "codeShort": "IR",
+      "idCountry": "IRN",
+      "name": "Iran",
+      "nameEN": "Iran (Islamic Republic of)"
+    },
+    {
+      "codeShort": "IQ",
+      "idCountry": "IRQ",
+      "name": "Iraq",
+      "nameEN": "Iraq"
+    },
+    {
+      "codeShort": "IL",
+      "idCountry": "ISR",
+      "name": "Israel",
+      "nameEN": "Israel"
+    },
+    {
+      "codeShort": "JO",
+      "idCountry": "JOR",
+      "name": "Jordan",
+      "nameEN": "Jordan"
+    },
+    {
+      "codeShort": "KW",
+      "idCountry": "KWT",
+      "name": "Kuwait",
+      "nameEN": "Kuwait"
+    },
+    {
+      "codeShort": "LB",
+      "idCountry": "LBN",
+      "name": "Lebanon",
+      "nameEN": "Lebanon"
+    },
+    {
+      "codeShort": "MA",
+      "idCountry": "MAR",
+      "name": "Morocco",
+      "nameEN": "Morocco"
+    },
+    {
+      "codeShort": "NL",
+      "idCountry": "NLD",
+      "name": "Netherlands",
+      "nameEN": "Netherlands (the)"
+    },
+    {
+      "codeShort": "NO",
+      "idCountry": "NOR",
+      "name": "Norway",
+      "nameEN": "Norway"
+    },
+    {
+      "codeShort": "OM",
+      "idCountry": "OMN",
+      "name": "Oman",
+      "nameEN": "Oman"
+    },
+    {
+      "codeShort": "PS",
+      "idCountry": "PSE",
+      "name": "Palestine, State of",
+      "nameEN": "Palestine, State of"
+    },
+    {
+      "codeShort": "QA",
+      "idCountry": "QAT",
+      "name": "Qatar",
+      "nameEN": "Qatar"
+    },
+    {
+      "codeShort": "SA",
+      "idCountry": "SAU",
+      "name": "Saudi Arabia",
+      "nameEN": "Saudi Arabia"
+    },
+    {
+      "codeShort": "SE",
+      "idCountry": "SWE",
+      "name": "Sweden",
+      "nameEN": "Sweden"
+    },
+    {
+      "codeShort": "TR",
+      "idCountry": "TUR",
+      "name": "Turkey",
+      "nameEN": "Turkey"
+    },
+    {
+      "codeShort": "YE",
+      "idCountry": "YEM",
+      "name": "Yemen",
+      "nameEN": "Yemen"
+    },
+    {
+      "codeShort": "RU",
+      "idCountry": "RUS",
+      "name": "Russian Federation",
+      "nameEN": "Russian Federation (the)"
+    },
+    {
+      "codeShort": "US",
+      "idCountry": "USA",
+      "name": "United States of America",
+      "nameEN": "United States of America (the)"
+    },
+    {
+      "codeShort": "UA",
+      "idCountry": "UKR",
+      "name": "Ukraine",
+      "nameEN": "Ukraine"
+    },
+    {
+      "codeShort": "AR",
+      "idCountry": "ARG",
+      "name": "Argentina",
+      "nameEN": "Argentina"
+    },
+    {
+      "codeShort": "AU",
+      "idCountry": "AUS",
+      "name": "Australia",
+      "nameEN": "Australia"
+    },
+    {
+      "codeShort": "AT",
+      "idCountry": "AUT",
+      "name": "Austria",
+      "nameEN": "Austria"
+    },
+    {
+      "codeShort": "BY",
+      "idCountry": "BLR",
+      "name": "Belarus",
+      "nameEN": "Belarus"
+    },
+    {
+      "codeShort": "BR",
+      "idCountry": "BRA",
+      "name": "Brazil",
+      "nameEN": "Brazil"
+    },
+    {
+      "codeShort": "BG",
+      "idCountry": "BGR",
+      "name": "Bulgaria",
+      "nameEN": "Bulgaria"
+    },
+    {
+      "codeShort": "CA",
+      "idCountry": "CAN",
+      "name": "Canada",
+      "nameEN": "Canada"
+    },
+    {
+      "codeShort": "CL",
+      "idCountry": "CHL",
+      "name": "Chile",
+      "nameEN": "Chile"
+    },
+    {
+      "codeShort": "CY",
+      "idCountry": "CYP",
+      "name": "Cyprus",
+      "nameEN": "Cyprus"
+    },
+    {
+      "codeShort": "CZ",
+      "idCountry": "CZE",
+      "name": "Czechia",
+      "nameEN": "Czechia"
+    },
+    {
+      "codeShort": "EE",
+      "idCountry": "EST",
+      "name": "Estonia",
+      "nameEN": "Estonia"
+    },
+    {
+      "codeShort": "FI",
+      "idCountry": "FIN",
+      "name": "Finland",
+      "nameEN": "Finland"
+    },
+    {
+      "codeShort": "IS",
+      "idCountry": "ISL",
+      "name": "Iceland",
+      "nameEN": "Iceland"
+    },
+    {
+      "codeShort": "IN",
+      "idCountry": "IND",
+      "name": "India",
+      "nameEN": "India"
+    },
+    {
+      "codeShort": "IE",
+      "idCountry": "IRL",
+      "name": "Ireland",
+      "nameEN": "Ireland"
+    },
+    {
+      "codeShort": "IT",
+      "idCountry": "ITA",
+      "name": "Italy",
+      "nameEN": "Italy"
+    },
+    {
+      "codeShort": "JP",
+      "idCountry": "JPN",
+      "name": "Japan",
+      "nameEN": "Japan"
+    },
+    {
+      "codeShort": "KR",
+      "idCountry": "KOR",
+      "name": "Korea (the Republic of)",
+      "nameEN": "Korea (the Republic of)"
+    },
+    {
+      "codeShort": "LV",
+      "idCountry": "LVA",
+      "name": "Latvia",
+      "nameEN": "Latvia"
+    },
+    {
+      "codeShort": "LT",
+      "idCountry": "LTU",
+      "name": "Lithuania",
+      "nameEN": "Lithuania"
+    },
+    {
+      "codeShort": "LU",
+      "idCountry": "LUX",
+      "name": "Luxembourg",
+      "nameEN": "Luxembourg"
+    },
+    {
+      "codeShort": "MT",
+      "idCountry": "MLT",
+      "name": "Malta",
+      "nameEN": "Malta"
+    },
+    {
+      "codeShort": "MX",
+      "idCountry": "MEX",
+      "name": "Mexico",
+      "nameEN": "Mexico"
+    },
+    {
+      "codeShort": "PL",
+      "idCountry": "POL",
+      "name": "Poland",
+      "nameEN": "Poland"
+    },
+    {
+      "codeShort": "PT",
+      "idCountry": "PRT",
+      "name": "Portugal",
+      "nameEN": "Portugal"
+    },
+    {
+      "codeShort": "RO",
+      "idCountry": "ROU",
+      "name": "Romania",
+      "nameEN": "Romania"
+    },
+    {
+      "codeShort": "SK",
+      "idCountry": "SVK",
+      "name": "Slovakia",
+      "nameEN": "Slovakia"
+    },
+    {
+      "codeShort": "SI",
+      "idCountry": "SVN",
+      "name": "Slovenia",
+      "nameEN": "Slovenia"
+    },
+    {
+      "codeShort": "ZA",
+      "idCountry": "ZAF",
+      "name": "South Africa",
+      "nameEN": "South Africa"
+    },
+    {
+      "codeShort": "CH",
+      "idCountry": "CHE",
+      "name": "Switzerland",
+      "nameEN": "Switzerland"
+    },
+    {
+      "codeShort": "SY",
+      "idCountry": "SYR",
+      "name": "Syrian Arab Republic",
+      "nameEN": "Syrian Arab Republic"
+    },
+    {
+      "codeShort": "TN",
+      "idCountry": "TUN",
+      "name": "Tunisia",
+      "nameEN": "Tunisia"
+    }
+  ],
+  "token": null,
+  "errorCode": null,
+  "errorMessage": null
+}

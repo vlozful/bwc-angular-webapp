@@ -1,0 +1,36 @@
+<div id="restore-pwd" class="page-container container">
+  <section class="login-register" ng-if="state.value == 1">
+    <h1>{{::g.t('Restore password')}}</h1>
+    <h2>
+      {{::g.t('If you have lost your password you can request that a new password be assigned to your account and e-mailed to you by filling out the following form')}}:
+    </h2>
+    <form name="restoreForm" novalidate method="post" ng-submit="getHashCode(restoreModel)">
+      <div class="form-field" ng-class="{'highlight': restoreForm.email.$dirty && restoreForm.email.$touched, 'has-success': restoreForm.email.$valid, 'has-error': !restoreForm.email.$valid}">
+        <input name="email" class="hairline-border" type="email" ng-model="restoreModel.email" placeholder="{{::g.t('Enter email')}}" required>
+      </div>
+      <div class="form-field button-field">
+        <button class="btn btn-green w100 round"type="submit">{{::g.t('Continue')}}</button>
+      </div>
+    </form>
+  </section>
+  <section class="login-register" ng-if="state.value == 2">
+    <h1>{{::g.t('Enter new password')}}</h1>
+    <h2>{{::g.t('#required_text_about_code_from_email')}}</h2>
+    <form name="passwordForm" novalidate method="post" ng-submit="restore(passwordsModel)">
+      <div class="form-field" ng-class="{'highlight': passwordForm.password1.$dirty && passwordForm.password1.$touched, 'has-success': passwordForm.password1.$valid, 'has-error': !passwordForm.password1.$valid}">
+        <input name="password1" class="hairline-border" type="password" ng-model="passwordsModel.password1" placeholder="{{::g.t('New password')}}" required>
+      </div>
+      <div class="form-field" ng-class="{'highlight': passwordForm.password2.$dirty && passwordForm.password2.$touched, 'has-success': passwordForm.password2.$valid, 'has-error': !passwordForm.password2.$valid}">
+        <input name="password2" class="hairline-border" type="password" ng-model="passwordsModel.password2" placeholder="{{::g.t('Repeat password')}}" required compare-to="passwordsModel.password1">
+      </div>
+      <div class="form-field" ng-class="{'highlight': passwordForm.hash.$dirty && passwordForm.hash.$touched, 'has-success': passwordForm.hash.$valid, 'has-error': !passwordForm.hash.$valid}">
+        <input name="hash" class="hairline-border" ng-model="passwordsModel.hash" placeholder="{{g.t('Enter confirmation code')}}" required>
+      </div>
+      <div class="form-field button-field">
+        <button class="btn btn-green w100 round" type="submit">{{::g.t('Continue')}}</button>
+      </div>
+    </form>
+  </section>
+  <br>
+  <a class="text-centered wb100 white" ng-click="navigate.login()">{{::g.t('Back')}}</a>
+</div>

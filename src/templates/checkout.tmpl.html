@@ -1,0 +1,42 @@
+<div id="paypal" class="page-container container">
+    <section class="book-details">
+        <h1 translate>Perform purchase</h1>
+        <h2>Vi använder Paypal som betalmetod. För att genomföra köpet klickar du på den gröna knappen nedan. Boken kommer efter genomfört köp finnas tillgänglig i appen.</h2>
+        <div class="book-field">
+            <div class="book-cover">
+                <img ng-src="{{book.thumb}}">
+            </div>
+            <div class="book-info">
+                <h2>{{::book.title}}</h2>
+                <h3>{{::book.author}}</h3>
+                <div class="book-price">
+                    <p class="price"><strong>{{book.price}}:-</strong></p>
+                    <p class="vat">Varav {{book.VAT}} är moms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <form class="payment" name="checkoutForm" novalidate method="post" ng-submit="checkout(card)">
+        <section class="paypal hairline-border">
+            <div class="logo"><div></div></div>
+            <label translate>Card owner</label>
+            <div class="form-field" ng-class="{'highlight': checkoutForm.owner.$dirty && checkoutForm.owner.$touched, 'has-success': checkoutForm.owner.$valid, 'has-error': !checkoutForm.owner.$valid}">
+                <input class="hairline-border" type="text" name="owner" placeholder="{{'Card owner'|translate}}" ng-model="card.owner" required/>
+            </div>
+            <label translate>Card number</label>
+            <div class="form-field" ng-class="{'highlight': checkoutForm.number.$dirty && checkoutForm.number.$touched, 'has-success': checkoutForm.number.$valid, 'has-error': !checkoutForm.number.$valid}">
+                <input class="hairline-border" type="text" name="number" placeholder="xxxx-xxxx-xxxx-xxxx" ng-model="card.number" required/>
+            </div>
+            <label translate>Expiration Date</label>
+            <div>
+                <div class="form-field row" ng-class="{'highlight': checkoutForm.mm.$dirty && checkoutForm.mm.$touched, 'has-success': checkoutForm.mm.$valid, 'has-error': !checkoutForm.mm.$valid}">
+                    <input class="hairline-border small" type="number" name="mm" class="small" placeholder="{{'mm'|translate}}" ng-model="card.mm" required min="1" max="12" maxlength="2" integer/>
+                </div>
+                <div class="form-field row" ng-class="{'highlight': checkoutForm.yy.$dirty && checkoutForm.yy.$touched, 'has-success': checkoutForm.yy.$valid, 'has-error': !checkoutForm.yy.$valid}">
+                    <input class="hairline-border small" type="number" name="yy" class="small" placeholder="{{'yy'|translate}}" ng-model="card.yy" integer required maxlength="2"/>
+                </div>
+            </div>
+            <button class="btn btn-blue round" translate>Buy</button>
+        </section>
+    </form>
+</div>

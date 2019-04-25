@@ -1,0 +1,11 @@
+<div id="ebook">
+  <div class="font-size" font-size></div>
+  <div class="info author"></div>
+  <div class="info page" ng-if="bookData.book.ready">{{bookData.book.currentPage}} / {{::bookData.book.totalPages}}</div>
+  <div class="info back" ng-if="bookData.back" ng-click="back(bookData.back)">{{::g.t('Back to page')}} {{bookData.back}}</div>
+  <div class="slider-container" epub-slider></div>
+  <div class="slider-info">
+    <div class="chapter"></div>
+    <div class="number"></div>
+  </div>
+</div>

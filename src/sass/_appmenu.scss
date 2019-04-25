@@ -1,0 +1,127 @@
+@import "compass/css3/transform";
+
+#app-menu {
+  position:absolute;
+  top:0px;
+  min-width: 250px;
+  width: 250px;
+  height: 100%;
+  display: block;
+  background: #efefef;
+  padding: 25px;
+  left: -250px;
+  -webkit-transition:all 0.5s ease-in-out;
+  -moz-transition:all 0.5s ease-in-out;
+  -o-transition:all 0.5s ease-in-out;
+  transition:all 0.5s ease-in-out;
+  &.opened {
+    display:block;
+    @include translateX(250px);
+    & + #pages-container {
+      @include translateX(250px);
+    }
+  }
+  ul {
+    font-weight: bold;
+    color: #4c4c4c;
+    margin-top: 10px;
+    li {
+      padding-left: 35px;
+      height: 40px;
+      line-height: 40px;
+      vertical-align: middle;
+      border-bottom: 1px solid #dadada;
+      span.info {
+        position:absolute;
+        width:22px;
+        height:22px;
+        display:block;
+        font-weight: bold;
+        font-size: 14px;
+        line-height:22px;
+        vertical-align: middle;
+        text-align: center;
+        color:white;
+        background: #ee4136;
+        border-radius: 50%;
+        border-color: transparent;
+        right:0px;
+        top: 9px;
+      }
+      &:before {
+        content: '';
+        position:absolute;
+        left: 0px;
+        top: 10px;
+      }
+    }
+  }
+}
+
+li.books {
+  &:before {
+    @include retina-sprite($menu-books-group);
+  }
+}
+
+li.genres {
+  &:before {
+    @include retina-sprite($menu-genres-group);
+  }
+}
+
+li.new-books {
+  &:before {
+    top: 9px !important;
+    @include retina-sprite($menu-new-books-group);
+  }
+}
+
+li.book-language {
+  &:before {
+    top: 9px !important;
+    @include retina-sprite($menu-book-language-group);
+  }
+}
+
+li.top-books {
+  &:before {
+    @include retina-sprite($menu-top-books-group);
+  }
+}
+
+li.account {
+  &:before {
+    @include retina-sprite($menu-account-group);
+  }
+}
+
+li.news {
+  &:before {
+    @include retina-sprite($menu-news-group);
+  }
+}
+
+li.settings {
+  &:before {
+    @include retina-sprite($menu-settings-group)
+  }
+}
+
+li.terms {
+  &:before {
+    @include retina-sprite($menu-terms-group)
+  }
+}
+
+li.cookies {
+  &:before {
+    @include retina-sprite($menu-cookies-group)
+  }
+}
+
+li.about {
+  &:before {
+    @include retina-sprite($menu-about-group)
+  }
+}

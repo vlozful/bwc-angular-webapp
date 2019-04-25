@@ -1,0 +1,56 @@
+<div id="cart" class="page-container container">
+  <h1>{{::g.t('Shopping cart')}}</h1>
+  <h2 ng-if="cartItems() == 0">{{::g.t('Your cart is empty')}}</h2>
+  <section class="bookshelf cart">
+    <div class="book-field hairline-border-bottom" padding="0" ng-repeat="item in items() track by item.id">
+      <div class="book-cover"><img ng-src="{{item.book.thumb}}"></div>
+      <div class="book-info">
+        <h2>{{::item.book.title}}</h2>
+        <h3>{{::item.book.author}}</h3>
+        <p class="price">{{::item.price}} {{::item.currency}}</p>
+      </div>
+      <div class="btn-remove" ng-click="removeItem(item)"></div>
+    </div>
+  </section>
+  <section class="total" ng-if="cartItems() > 0">
+    <div class="book-field hairline-border-bottom">
+      <div class="label">{{::g.t('Order total')}}</div>
+      <div class="value">{{price()}}</div>
+    </div>
+    <div class="book-field hairline-border-bottom">
+      <div class="label">{{::g.t('Order VAT')}}</div>
+      <div class="value">{{VAT()}}</div>
+    </div>
+    <div class="book-field hairline-border-bottom">
+      <div class="label">{{::g.t('Total')}}</div>
+      <div class="value">{{total()}}</div>
+    </div>
+  </section>
+  <div class="button" ng-class="{'hidden': formVisible.value}" ng-if="cartItems() > 0">
+    <button class="btn btn-blue round" ng-click="showForm()">{{::g.t('Checkout')}}</button>
+  </div>
+  <form class="payment cart" ng-class="{'opened': formVisible.value}" name="checkoutForm" novalidate method="post" ng-submit="checkout(card)" ng-if="cartItems() > 0">
+    <section class="paypal hairline-border">
+      <div class="logo">
+        <div></div>
+      </div>
+      <label>{{::g.t('Cardholder')}}</label>
+      <div class="form-field" ng-class="{'highlight': checkoutForm.owner.$dirty && checkoutForm.owner.$touched, 'has-success': checkoutForm.owner.$valid, 'has-error': !checkoutForm.owner.$valid}">
+        <input class="hairline-border" name="owner" placeholder="{{::g.t('Cardholder')}}" ng-model="card.owner" required></div>
+        <label>{{::g.t('Card Number')}}</label>
+      <div class="form-field" ng-class="{'highlight': checkoutForm.number.$dirty && checkoutForm.number.$touched, 'has-success': checkoutForm.number.$valid, 'has-error': !checkoutForm.number.$valid}">
+        <input class="hairline-border" name="number" placeholder="xxxx-xxxx-xxxx-xxxx" ng-model="card.number" required>
+      </div>
+      <label>{{::g.t('Expiration date')}}</label>
+      <div>
+        <div class="form-field row" ng-class="{'highlight': checkoutForm.mm.$dirty && checkoutForm.mm.$touched, 'has-success': checkoutForm.mm.$valid, 'has-error': !checkoutForm.mm.$valid}">
+          <input class="hairline-border small" type="number" name="mm" class="small" placeholder="{{::g.t('mm')}}" ng-model="card.mm" required min="1" max="12" maxlength="2" integer>
+        </div>
+        <div class="form-field row" ng-class="{'highlight': checkoutForm.yy.$dirty && checkoutForm.yy.$touched, 'has-success': checkoutForm.yy.$valid, 'has-error': !checkoutForm.yy.$valid}">
+          <input class="hairline-border small" type="number" name="yy" class="small" placeholder="{{::g.t('yy')}}" ng-model="card.yy" integer required maxlength="2">
+        </div>
+      </div>
+      <button class="btn btn-blue round" type="submit">{{::g.t('Pay')}}</button>
+    </section>
+  </form>
+</div>

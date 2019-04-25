@@ -1,0 +1,31 @@
+<div id="app-menu" ng-class="{'opened': menuState.opened}">
+  <div class="search" ng-if="!status.offline">
+    <input class="hairline-border" type="search" placeholder="{{::g.t('Search')}}" ng-blur="searchString.length ? navigate.search(searchString) : ''" ng-model="searchString">
+  </div>
+  <ul class="vlist">
+    <li class="books hairline-border-bottom" ng-click="navigate.home()">{{::g.t('My books')}}</li>
+    <li class="genres hairline-border-bottom" ng-if="!status.offline" ng-click="navigate.genres()">{{::g.t('Genres')}}</li>
+    <li class="new-books hairline-border-bottom" ng-if="!status.offline" ng-click="navigate.new()">
+      {{::g.t('New books')}}</li>
+    <li class="top-books hairline-border-bottom" ng-if="!status.offline" ng-click="navigate.top()">{{::g.t('Popular')}}</li>
+    <li class="book-language hairline-border-bottom" ng-if="!status.offline" ng-click="navigate.langs()">{{::g.t('Books by language')}}</li>
+    <li class="settings hairline-border-bottom" ng-if="!status.offline" ng-click="navigate.settings()">{{::g.t('Settings')}}</li>
+    <li class="terms hairline-border-bottom" ng-click="navigate.terms()">{{::g.t('Terms & Conditions')}}</li>
+    <li class="cookies hairline-border-bottom" ng-click="navigate.cookies()">{{::g.t('Cookies')}}</li>
+    <li class="about hairline-border-bottom" ng-click="navigate.about()">{{::g.t('About')}}</li>
+  </ul>
+</div>
+<div id="pages-container" class="container">
+  <nav id="navbar-main">
+    <ul class="hlist">
+      <li id="nav-menu" ng-click="toggleMenu()"></li>
+      <li id="nav-back" ng-click="navigate.back()"></li>
+      <li id="nav-settings" ng-if="!status.offline" ng-click="navigate.settings()"></li>
+      <li id="nav-home" ng-click="navigate.home()"></li>
+      <li id="nav-cart" ng-if="!status.offline && !status.trial" ng-click="navigate.cart()">
+        <span ng-if="cartItems()>0">{{cartItems()}}</span>
+      </li>
+    </ul>
+  </nav>
+  <div app-view-segment="1"></div>
+</div>

@@ -1,0 +1,122 @@
+{
+  "result": true,
+  "data": [
+    {
+      "bookCount": "2",
+      "idGenre": "14",
+      "name": "Esoterics",
+      "nameTranslated": "Esoterics"
+    },
+    {
+      "bookCount": "61",
+      "idGenre": "482",
+      "name": "History and civilisations",
+      "nameTranslated": "History and civilisations"
+    },
+    {
+      "bookCount": "164",
+      "idGenre": "463",
+      "name": "Poetry",
+      "nameTranslated": "Poetry"
+    },
+    {
+      "bookCount": "178",
+      "idGenre": "28",
+      "name": "Politics",
+      "nameTranslated": "Politics"
+    },
+    {
+      "bookCount": "711",
+      "idGenre": "132",
+      "name": "Religion",
+      "nameTranslated": "Religion"
+    },
+    {
+      "bookCount": "618",
+      "idGenre": "483",
+      "name": "Novels and stories",
+      "nameTranslated": "Novels and stories"
+    },
+    {
+      "bookCount": "23",
+      "idGenre": "484",
+      "name": "Children books",
+      "nameTranslated": "Children books"
+    },
+    {
+      "bookCount": "88",
+      "idGenre": "485",
+      "name": "Psychology and philosophy",
+      "nameTranslated": "Psychology and philosophy"
+    },
+    {
+      "bookCount": "72",
+      "idGenre": "486",
+      "name": "Medicine and public health",
+      "nameTranslated": "Medicine and public health"
+    },
+    {
+      "bookCount": "181",
+      "idGenre": "487",
+      "name": "Biographies and diaries",
+      "nameTranslated": "Biographies and diaries"
+    },
+    {
+      "bookCount": "39",
+      "idGenre": "437",
+      "name": "Geography",
+      "nameTranslated": "Geography"
+    },
+    {
+      "bookCount": "16",
+      "idGenre": "425",
+      "name": "Technology",
+      "nameTranslated": "Technology"
+    },
+    {
+      "bookCount": "997",
+      "idGenre": "488",
+      "name": "\u0627\u0644\u0623\u062f\u0628 \u0648\u0627\u0644\u0634\u0639\u0631",
+      "nameTranslated": "Poetry"
+    },
+    {
+      "bookCount": "1050",
+      "idGenre": "489",
+      "name": "Other",
+      "nameTranslated": "Other"
+    },
+    {
+      "bookCount": "52",
+      "idGenre": "332",
+      "name": "\u0627\u0644\u0641\u0646 \u0648\u0627\u0644\u0645\u0633\u0631\u062d",
+      "nameTranslated": "\u0627\u0644\u0641\u0646 \u0648\u0627\u0644\u0645\u0633\u0631\u062d"
+    },
+    {
+      "bookCount": "199",
+      "idGenre": "361",
+      "name": "\u0627\u0644\u0639\u0627\u0626\u0644\u0629 \u0648\u0627\u0644\u0645\u062c\u062a\u0645\u0639",
+      "nameTranslated": "\u0627\u0644\u0639\u0627\u0626\u0644\u0629 \u0648\u0627\u0644\u0645\u062c\u062a\u0645\u0639"
+    },
+    {
+      "bookCount": "148",
+      "idGenre": "390",
+      "name": "History",
+      "nameTranslated": "History"
+    },
+    {
+      "bookCount": "80",
+      "idGenre": "421",
+      "name": "Science & Technology",
+      "nameTranslated": "Science & Technology"
+    },
+    {
+      "bookCount": "35",
+      "idGenre": "462",
+      "name": "Classics",
+      "nameTranslated": "Classics"
+    }
+  ],
+  "token": null,
+  "errorCode": null,
+  "errorMessage": null
+}

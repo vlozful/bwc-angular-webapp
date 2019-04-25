@@ -1,0 +1,87 @@
+@import "dimensions";
+
+nav {
+  text-align: right;
+  ul {
+    padding: 0px;
+  }
+  li {
+    margin-left: $nav-ul-li-margin-left;
+  }
+}
+
+#nav-menu {
+  @include retina-sprite($nav-menu-group);
+  position:absolute;
+  left: $nav-menu-left;
+  margin-left:0px;
+  margin-top: $nav-menu-margintop;
+  &.exclamation {
+    overflow: visible;
+    &:after {
+      content: "!";
+      display:block;
+      position:absolute;
+      width:18px;
+      height:18px;
+      font-weight: bold;
+      color: #ee4136;
+      text-align:center;
+      //vertical-align: middle;
+      line-height: 18px;
+      background-color: white;
+      border-radius: 50%;
+      border: 2px solid #ee4136;
+      right: -9px;
+      top: -7px;
+    }
+  }
+}
+
+#nav-reader {
+  @include retina-sprite($nav-reader-group);
+}
+
+#nav-settings {
+  @include retina-sprite($nav-settings-group);
+}
+
+#nav-seek {
+  @include retina-sprite($nav-seek-group);
+}
+
+#nav-home {
+  @include retina-sprite($nav-home-group);
+}
+
+#nav-back {
+  @include retina-sprite($nav-back-group);
+}
+
+#nav-cart {
+  @include retina-sprite($nav-cart-group);
+  span {
+    background: white;
+    color: #ee4136;
+    border: 2px solid #ee4136;
+    font-size: 9px;
+    border-radius: 50%;
+    display: block;
+    padding: 3px 0;
+    text-align: center;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    top: -10px;
+    right: -13px;
+  }
+}
+
+#navbar-main {
+  height:$mainmenu-height;
+  left:0px;
+  right:0px;
+  //position:fixed;
+  background: #ee4136;
+  padding: $navbar-main-padding;
+}

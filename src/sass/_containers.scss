@@ -1,0 +1,76 @@
+@import "dimensions";
+@import "compass/css3/transform";
+
+.container {
+  position:absolute;
+  left:0px;
+  top:0px;
+  bottom:0px;
+  right:0px;
+}
+
+#main-container {
+  overflow:hidden;
+}
+
+#pages-container {
+  -webkit-transition:all 0.5s ease-in-out;
+  -moz-transition:all 0.5s ease-in-out;
+  -o-transition:all 0.5s ease-in-out;
+  transition:all 0.5s ease-in-out;
+}
+
+.page-container {
+  top:$mainmenu-height;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: $page-padding-top $page-padding-side $page-padding-bottom $page-padding-side;
+}
+
+.logo-container {
+  width:100%;
+  text-align:center;
+  margin-top: -6px;
+  margin-bottom:47px;
+  .logo {
+    display: inline-block;
+    text-indent: -9999px;
+    width: 124px;
+    height: 57px;
+    background: url(../i/logo.svg);
+    background-size: 124px 57px;
+  }
+}
+
+.cookie-container {
+  position: absolute;
+  display: table;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  bottom: 0;
+  &.visible {
+    display: table !important;
+  }
+  & > div {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px;
+  }
+  a {
+    color: #2e82b2;
+    cursor: pointer;
+  }
+  button {
+    background: #f1d600;
+    color: #000;
+    width: 100%;
+    height: auto;
+  }
+  .button {
+    width: 25%;
+  }
+
+
+}

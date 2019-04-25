@@ -1,0 +1,44 @@
+<div id="register" class="page-container container">
+  <section class="login-register" dir="{{rtlDir.value}}">
+    <h1>{{::g.t('Create an account')}}</h1>
+    <h2>{{::g.t('#required_registration_text')}}</h2>
+    <form name="registerForm" novalidate method="post" ng-submit="register(regInfo)">
+      <div class="form-field no-mark">
+        <div class="select-field">
+          <div class="select-arrows"></div>
+          <select class="hairline-border" name="idLanguage" ng-model="regInfo.idLanguage" required>
+            <option value="" selected>{{::g.t('Choose language')}}</option>
+            <option value="sv">Svenska</option>
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+            <option value="es">Español</option>
+            <option value="de">Deutsch</option>
+            <option value="ar">Arabic</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field no-mark" ng-class="{'highlight': registerForm.country.$dirty && registerForm.country.$touched, 'has-success': registerForm.country.$valid, 'has-error': !registerForm.country.$valid}">
+        <div class="select-field">
+          <div class="select-arrows"></div>
+          <select name="country" class="hairline-border" ng-model="regInfo.country" required convert-to-number>
+            <option value="" disabled selected>{{::g.t('Please choose country')}}</option>
+            <option ng-repeat="country in countries" value="{{::country.idCountry}}">{{::country.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-field" ng-class="{'highlight': registerForm.email.$dirty && registerForm.email.$touched, 'has-success': registerForm.email.$valid, 'has-error': !registerForm.email.$valid}">
+        <input name="email" class="hairline-border" type="email" placeholder="{{::g.t('Your Email')}}" ng-model="regInfo.email" required>
+      </div>
+      <div class="form-field" ng-class="{'highlight': registerForm.password.$dirty && registerForm.password.$touched, 'has-success': registerForm.password.$valid, 'has-error': !registerForm.password.$valid}">
+        <input name="password" class="hairline-border" type="password" placeholder="{{::g.t('Password')}}" ng-model="regInfo.password" required>
+        </div>
+      <div class="form-field" ng-class="{'highlight': registerForm.password1.$dirty && registerForm.password1.$touched, 'has-success': registerForm.password1.$valid, 'has-error': !registerForm.password1.$valid}">
+        <input name="password1" class="hairline-border" type="password" placeholder="{{::g.t('Retype password')}}" ng-model="regInfo.password1" required compare-to="regInfo.password">
+      </div>
+      <div class="form-field button-field">
+        <button class="btn btn-green w100 round" type="submit">{{::g.t('Continue')}}</button>
+      </div>
+    </form>
+  </section><br>
+  <a class="text-centered wb100 white" ng-click="navigate.login()">{{::g.t('Back to login')}}</a>
+</div>

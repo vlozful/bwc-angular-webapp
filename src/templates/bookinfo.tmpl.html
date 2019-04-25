@@ -1,0 +1,49 @@
+<div id="book-details" class="page-container container" ng-if="::book.id">
+  <section class="book-details hairline-border-bottom">
+    <div class="book-field">
+      <div class="book-cover">
+        <img ng-src="{{book.thumb}}">
+      </div>
+      <div class="book-info">
+        <h2 dir="{{::book.dir}}">{{::book.title}}</h2>
+        <h3>{{::book.author}}</h3>
+        <div class="button">
+          <button class="btn btn-buy round blue" ng-click="navigate.previewBook(book)">{{::g.t('Preview')}}</button>
+          <button class="btn btn-buy round" ng-if="!status.trial" ng-class="{green: !book.inCart}" ng-click="addToCart(book, $event)">{{::g.t('Buy')}}</button>
+          <button class="btn btn-buy round green" ng-if="status.trial && !book.isMyBook" ng-click="addToMyBooks(book, $event)">{{::g.t('Free trial')}}</button>
+          <button class="btn btn-buy round green" ng-if="status.trial && book.isMyBook" ng-click="navigate.home($event)">{{::g.t('Read')}}</button>
+        </div>
+      </div>
+    </div>
+    <p><strong ng-if="book.pages">{{::g.t('Number of pages')}}:</strong> {{::book.pages}}</p>
+  </section>
+  <section class="genres hairline-border-bottom">
+    <h1>{{::g.t('Genres')}}</h1>
+    <ul class="taglist hlist">
+      <li ng-repeat="genre in book.genres" ng-click="navigate.showGenreBooks(genre)">{{genre.title}}</li>
+    </ul>
+  </section>
+  <section class="handling hairline-border-bottom" ng-if="::book.summary">
+    <h1>{{::g.t('Summary')}}</h1>
+    <p ng-if="book.shortSummary" dir="{{::book.dir}}">{{book.shortSummary}} <a class="blue no-underline" ng-click="showSummary()"><strong>{{::g.t('More')}}</strong></a></p>
+    <p ng-if="::book.fullSummary" dir="{{::book.dir}}">{{book.fullSummary}}</p>
+  </section>
+  <section class="bookshelf" ng-if="book.similar">
+    <h1>{{::g.t('Similar books')}}</h1>
+    <div class="book-field hairline-border-bottom" ng-repeat="item in book.similar" ng-click="navigate.showBook(item)">
+      <div class="book-cover">
+        <img ng-src="{{::item.thumb}}">
+      </div>
+      <div class="book-info">
+        <h2>{{::item.title}}</h2>
+        <h3>{{::item.author}}</h3>
+        <div class="button" ng-if="::item.price && !status.trial">
+          <button class="btn btn-buy round" ng-class="{green: !item.inCart}" ng-click="addToCart(item, $event)">{{::item.price}} {{::item.currency}}</button>
+        </div>
+        <div class="button" ng-if="status.trial">
+          <button class="btn btn-buy round" ng-class="{green: !item.isMyBook}" ng-click="addToMyBooks(item, $event)">{{::g.t('Free trial')}}</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
