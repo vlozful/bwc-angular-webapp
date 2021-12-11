@@ -6,6 +6,7 @@ const path = require('path'),
 function resolveImageSrc(loaderContext, tile, callback) {
 
   var dirname = path.dirname(loaderContext.resourcePath),
+      options = loaderContext.getOptions();
       src = (tile.attributes) ? tile.attributes.src : tile.src;
 
   // Resolve the image filename relative to the browserconfig file
@@ -24,13 +25,15 @@ function resolveImageSrc(loaderContext, tile, callback) {
       }
 
       // Update the image src property to match the generated filename
-      // Is it always the first key in the assets object?
-        var src_new = Object.keys(module.buildInfo.assets)[0];
-        if(tile.attributes)
-          tile.attributes.src = src_new;
-        else
-          tile.src = src_new;
-      
+      var src_new = '/' + options.outputPath + '/' + path.basename(module.request);
+
+      loaderContext.emitFile (options.outputPath + '/' + path.basename(module.request), source);
+
+      if(tile.attributes)
+        tile.attributes.src = src_new;
+      else
+        tile.src = src_new;
+
       callback(null);
     });
   });
