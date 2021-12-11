@@ -26,15 +26,15 @@
         window.gSettings = {
             DEVELOPER: true,
             THUMB: {width: "178", height: "260"},
-            imageHost: "https://bwc.booqla.com/",
-            backendURL:"http://m.hekayh.com/"
+            imageHost: "https://www.nashrkitab.com/",
+            backendURL:"https://m.nashrkitab.com/"
         };
     </script>
 </head>
 <body ng-controller="AppController">
     <div id="main-container" class="container" app-view-segment="0"></div>
     <div ng-if="status.nocookieconfirm" ng-class="{visible: status.nocookieconfirm}" class="cookie-container" style="display:none">
-      <div class="text">This website uses cookies to ensure you get the best experience on our website.<a ng-click="navigate.cookies()">More info</a></div>
+      <div class="text">This website uses cookies to ensure you get the best experience on our website. <a ng-click="navigate.cookies()">More info</a></div>
       <div class="button">
         <button class="btn round yellow" ng-click="navigate.closecookie()">Got it!</button>
       </div>
