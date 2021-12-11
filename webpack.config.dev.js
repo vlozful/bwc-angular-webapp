@@ -2,11 +2,9 @@
 
 // Modules
 const path = require("path");
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SpritesmithPlugin = require('webpack-spritesmith');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const apiMocker = require('connect-api-mocker');
 
 var outputPath = "./build/dev/"
@@ -22,18 +20,14 @@ module.exports = {
         publicPath: ""
     },
     devServer: {
-        before: function(app, server) {
-            app.use(apiMocker('/api', {
-                target: 'src/mocks/api',
-                verbose: true
-              }));
-        },
-        contentBase: path.join(__dirname, outputPath),
-        compress: true,
-        overlay: false,
-        stats: {
-          colors: true
-        }
+      onBeforeSetupMiddleware: function(server) {
+        server.app.use(apiMocker('/api', {
+            target: 'src/mocks/api',
+            verbose: true
+          }));
+      },
+      compress: true,
+      hot: true
     },
     devtool: "source-map",
     module: {
@@ -65,46 +59,47 @@ module.exports = {
                   {
                     loader: "file-loader",
                     options: {
+                      esModule: false,
                       name: '[name].[ext]',
                       outputPath: 'i/favicons'
                     },
                   },
                   {
-                    loader: path.resolve('./src/webpack/favicons-manifest-loader/index.js')
+                    loader: path.resolve('./src/webpack/favicons-manifest-loader/index.js'),
+                    options: {
+                      outputPath: 'i/favicons'
+                    }
                   },
                 ]
               },
               {
                 test: /\.(ico|png|jpg|gif|svg)$/,
-                exclude: /sprites-gen/,
-                use: [{
-                        loader: 'file-loader',
-                        options: {
-                            name: '[path][name].[ext]?[hash]',
-                            context: 'src'
-                        }
-                    }]
+                exclude: [/sprites-gen/, /favicons/],
+                type: 'asset/resource',
+                generator: {
+                  filename: 'i/[name][ext]?[hash]]'
+                }
+              },
+              {
+                test: /(favicons).*.(ico|png|jpg|gif|svg)$/,
+                type: 'asset/resource',
+                generator: {
+                  filename: 'i/favicons/[name][ext]?[hash]]'
+                }
               },
               {
                 test: /(sprites-gen).*\.(png)$/,
-                use: [{
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]?[hash]',
-                            context: 'src',
-                            outputPath: 'i'
-                        }
-                    }]
+                type: 'asset/resource',
+                generator: {
+                  filename: 'i/[name][ext]?[hash]]'
+                }
               },
               {
                 test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: 'fonts'
-                    }
-                }]
+                type: 'asset/resource',
+                generator: {
+                  filename: 'fonts/[name][ext]?[hash]]'
+                }
             },
             {
                 test: /\.scss$/,
@@ -120,11 +115,12 @@ module.exports = {
                     },
                     {
                     loader: "sass-loader", // compiles Sass to CSS
-                    options:{
-                        includePaths: [
-                          path.resolve(__dirname, './node_modules/compass-mixins/lib'),
-                          path.resolve(__dirname, './src/sprites-gen')
-                        ]
+                    options: {
+                        sassOptions: {
+                          includePaths: [
+                            path.resolve(__dirname, './node_modules/compass-mixins/lib'),
+                            path.resolve(__dirname, './src/sprites-gen')
+                          ]}
                         }
                     }
                 ]
