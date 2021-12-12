@@ -20,6 +20,9 @@ module.exports = {
         path: path.resolve(__dirname, outputPath),
         publicPath: ""
     },
+    performance: {
+      hints: false,
+    },
     optimization: {
       minimizer: [
         new ClosurePlugin({mode: 'AGGRESSIVE_BUNDLE'}, {
@@ -140,30 +143,6 @@ module.exports = {
               ]
           }
       ],
-    },
-    optimization: {
-      /*
-        splitChunks: {
-            chunks: 'initial',
-            minSize: 100,
-            cacheGroups: {
-                commons: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'lib',
-                    filename: 'js/lib.js',
-                    enforce: true,
-                    priority: 100
-                },
-                templates: {
-                    test: /[\\/]templates[\\/]/,
-                    name: 'templates',
-                    filename: 'js/templates.js',
-                    enforce: true,
-                    priority:90
-                }
-            }
-        }
-        */
     },
     resolve: {
         modules: ["node_modules", "sprites-gen"]
